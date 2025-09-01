@@ -1,0 +1,231 @@
+/* ---------- Theme variables ---------- */
+.app {
+  --bg: #f5f5f5;
+  --text: #222;
+  --muted: #555;
+  --card: #ffffff;
+  --border: #dddddd;
+  --primary: #0077ff;
+  --primary-hover: #005fcc;
+  --chip-bg: #ffffff;
+  --chip-border: #bbbbbb;
+  --chip-active-bg: #e8f2ff;
+  --chip-active-text: #0077ff;
+  --danger: #d33;
+  --danger-bg: #ffecec;
+  --strike: #888;
+  --date: #666;
+}
+
+.app.dark {
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --muted: #a9b0bb;
+  --card: #151923;
+  --border: #2a3240;
+  --primary: #6ca8ff;
+  --primary-hover: #4f8ff0;
+  --chip-bg: #1a1f2b;
+  --chip-border: #3a4559;
+  --chip-active-bg: #233049;
+  --chip-active-text: #9ec4ff;
+  --danger: #ff6b6b;
+  --danger-bg: #3a2023;
+  --strike: #a0a6b1;
+  --date: #9aa3b2;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.app {
+  background-color: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+h1 {
+  text-align: center;
+  color: var(--text);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  max-width: 600px;
+  margin: 1rem auto;
+}
+
+li {
+  background: var(--card);
+  color: var(--text);
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.input-container {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+  gap: 0.5rem;
+}
+
+.input-container input {
+  padding: 0.5rem;
+  border: 1px solid var(--chip-border);
+  background: var(--card);
+  color: var(--text);
+  border-radius: 4px;
+  width: 280px;
+}
+
+.input-container button {
+  padding: 0.5rem 1rem;
+  background-color: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.input-container button:hover {
+  background-color: var(--primary-hover);
+}
+
+.filters {
+  max-width: 600px;
+  margin: 0 auto 0.75rem auto;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.count {
+  color: var(--muted);
+  font-size: 0.9 rem;
+  font-size: 0.9rem;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.filter-btn {
+  padding: 0.35rem 0.75rem;
+  border: 1px solid var(--chip-border);
+  background: var(--chip-bg);
+  color: var(--text);
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.filter-btn:hover {
+  filter: brightness(0.97);
+}
+
+.filter-btn.active {
+  border-color: var(--chip-active-text);
+  color: var(--chip-active-text);
+  background: var(--chip-active-bg);
+  font-weight: bold;
+}
+
+.actions-right {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.clear-btn {
+  padding: 0.35rem 0.75rem;
+  border: 1px solid var(--danger);
+  color: var(--danger);
+  background: transparent;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.clear-btn:hover {
+  background: var(--danger-bg);
+}
+
+.clear-btn:disabled {
+  border-color: var(--chip-border);
+  color: var(--muted);
+  cursor: not-allowed;
+  background: transparent;
+}
+
+.dark-toggle {
+  padding: 0.35rem 0.75rem;
+  border: 1px solid var(--chip-border);
+  background: var(--chip-bg);
+  color: var(--text);
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.item-left {
+  display: flex;
+  align-items: baseline;
+  gap: 0.35rem;
+  cursor: pointer;
+}
+
+.item-left input[type="checkbox"] {
+  transform: translateY(1px);
+  cursor: pointer;
+}
+
+.task-text.completed {
+  text-decoration: line-through;
+  color: var(--strike);
+}
+
+.task-date {
+  font-size: 0.7em;
+  color: var(--date);
+  margin: 0;
+}
+
+.delete-btn {
+  width: 24px;
+  height: 24px;
+  border: none;
+  background: none;
+  position: relative;
+  cursor: pointer;
+  margin-left: 0.5rem;
+}
+
+.delete-btn::before,
+.delete-btn::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 16px;
+  height: 2px;
+  background-color: var(--danger);
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.delete-btn::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.delete-btn:hover::before,
+.delete-btn:hover::after {
+  filter: brightness(1.2);
+}
